@@ -14,34 +14,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Choose Level.unity
     guid: 3b40b0ddd43557644875b5ccedadf6d1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level1.unity
     guid: 3739e625e9ce10a4290250288a9c28cd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level2.unity
     guid: e4c58bdc41cbf9f43850dc683b15c7e6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level3.unity
     guid: ae0d97d26513e404ba711f6b062d5f0a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level4.unity
     guid: 7379f08f2cb2604458a6f00ba4dc3889
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level5.unity
     guid: 432b0f9a92fc99e42bed6af33b5ea8d9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level6.unity
     guid: 7ad44932190a6ad45951ecf0c0b76d6b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level7.unity
     guid: 04a1ad839180ee9468e2c6853b585bf9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level8.unity
     guid: de0f749dcff24e342ad80cb595c3de9b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level9.unity
     guid: fce98160dc1768345834f4ae2c933e42
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level10.unity
     guid: 689e030e799795143a8deddc79b511c5
   - enabled: 1

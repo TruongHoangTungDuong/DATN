@@ -24,9 +24,10 @@ public class CheckPoint : MonoBehaviour
                     }
                 }
             }
-            UnLockNewLevel();
-            SceneManager.LoadSceneAsync(nextScene);
-            timeCountdown.currentTime = 200f;
+            //UnLockNewLevel();
+            //SceneManager.LoadSceneAsync(nextScene);
+            //timeCountdown.currentTime = 200f;
+
         }
     }
     void UnLockNewLevel()

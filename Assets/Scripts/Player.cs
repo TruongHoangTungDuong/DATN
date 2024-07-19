@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public LayerMask groundLayer;
     public float distance;
     public GameObject groundRayObject;
+    public GameObject groundRayObject1;
+    public GameObject groundRayObject2;
     public GameObject bulletObject;
     SpriteRenderer spriteRenderer;
     Animator anim;
@@ -34,8 +36,9 @@ public class Player : MonoBehaviour
     }
     public void Jump()
     {
-        if (isGrounded == true)
+        if (isGrounded == true||isTouchingWall==true)
         {
+            rb.gravityScale = 1;
             rb.AddForce(Vector3.up * force,ForceMode2D.Impulse);
             AudioManager.Instance.audioList[2].Play();
         }
@@ -66,10 +69,6 @@ public class Player : MonoBehaviour
     }
     private void Move()
     {
-        if (isClimbingWall)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 3);
-        }
         if (isMovingLeft)
         {
             horizontalMove = -speed;
@@ -149,11 +148,12 @@ public class Player : MonoBehaviour
     void Start()
     {
         speed = 3;
-        force = 10;
+        force = 12;
         Point = 0;
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim= GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        rb.isKinematic = false;
         playerCollider = GetComponent<Collider2D>();
         distance = 0.01f;
         coin = PlayerPrefs.GetInt("CoinCount");
@@ -179,7 +179,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontalMove,rb.velocity.y);
-        RaycastHit2D hitGround= (Physics2D.Raycast(groundRayObject.transform.position, Vector2.down));
+        RaycastHit2D hitGround= Physics2D.Raycast(groundRayObject.transform.position, Vector2.down);
         Debug.DrawRay(groundRayObject.transform.position, Vector2.down*hitGround.distance, Color.yellow);
         if (hitGround.collider != null)
         {
@@ -194,18 +194,26 @@ public class Player : MonoBehaviour
                 anim.SetBool("isJumping", true);
             }
         }
-        RaycastHit2D hitWallLeft = Physics2D.Raycast(transform.position, Vector2.left, 0.01f);
-        RaycastHit2D hitWallRight = Physics2D.Raycast(transform.position, Vector2.right, 0.01f);
+        RaycastHit2D hitWallLeft = Physics2D.Raycast(groundRayObject1.transform.position, Vector2.left, 0.01f);
+        RaycastHit2D hitWallRight = Physics2D.Raycast(groundRayObject2.transform.position, Vector2.right, 0.01f);
+        Debug.DrawRay(groundRayObject1.transform.position, Vector2.left * hitWallLeft.distance, Color.yellow);
+        Debug.DrawRay(groundRayObject2.transform.position, Vector2.right * hitWallRight.distance, Color.yellow);
         isTouchingWall = hitWallLeft.collider != null || hitWallRight.collider != null;
-
-        // Ki?m tra tr?ng thái leo t??ng
-        if (isTouchingWall && /*!isGrounded &&*/ Input.GetKey(KeyCode.W))
+        if (isTouchingWall == false)
         {
-            isClimbingWall = true;
+            Debug.Log("nottouch");
+            rb.gravityScale = 1;
         }
-        else
+    }
+    public void Climb()
+    {
+        Debug.Log(isTouchingWall);
+        if (isTouchingWall == true)
         {
-            isClimbingWall = false;
+            Debug.Log("ClimbWall");
+            rb.gravityScale=0;
+            transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, 0) ;
         }
+        
     }
 }

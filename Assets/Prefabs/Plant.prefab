@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 4114111432495891202, guid: f85ccb91ff4f71d44808845949b0798b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -124,10 +124,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   enemyCollider: {fileID: 0}
   anim: {fileID: 0}
-  player:
-  - {fileID: 1586027719184662468, guid: 5500e4ff527b57446a5ae258e23652e3, type: 3}
-  - {fileID: 7097007736355364103, guid: e4a496e179a738542b1e717b52615ec8, type: 3}
-  - {fileID: 1452857249125307073, guid: 8d27c44e9a65baa46b550fec31263f43, type: 3}
+  player: {fileID: 0}
+  players: []
   bullet: {fileID: 127761314462214581, guid: 772feda56e4e3fb4e8aa18a8f5a9dc72, type: 3}
   bulletSpawnPoint: {x: 0, y: 0, z: 0}
 --- !u!61 &2383057801971039215

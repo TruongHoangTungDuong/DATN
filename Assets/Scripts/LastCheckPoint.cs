@@ -7,7 +7,9 @@ public class LastCheckPoint : MonoBehaviour
 {
     public GameObject winPanel;
     public GameObject[] player;
-    private void OnTriggerEnter2D(Collider2D col)
+    public GameObject levelGen;
+    public MapSettings mapSetting;
+    private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Player")
         {
@@ -15,7 +17,8 @@ public class LastCheckPoint : MonoBehaviour
             {
                 if (player[i].activeInHierarchy)
                 {
-                    player[i].GetComponent<Player>().Point += 100;
+                    player[i].GetComponent<Player>().Point += Mathf.RoundToInt(levelGen.GetComponent<LevelGenerator>().width
+                        *levelGen.GetComponent<LevelGenerator>().height* mapSetting.modifier);
                     if (player[i].GetComponent<Player>().Point > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name))
                     {
                         PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, player[i].GetComponent<Player>().Point);
@@ -23,7 +26,7 @@ public class LastCheckPoint : MonoBehaviour
                     }
                 }
             }
-            winPanel.SetActive(true);
+           winPanel.SetActive(true);
            Time.timeScale = 0;
 
         }

@@ -31,6 +31,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4327083774345407532}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4740353802328150116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9025221248844094588}
+  m_Layer: 0
+  m_Name: GroundRay (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9025221248844094588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740353802328150116}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.147, y: 0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4327083774345407532}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7097007736355364103
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,6 +97,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5864731822392428295}
+  - {fileID: 22955156686318736}
+  - {fileID: 9025221248844094588}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7009633574549424286
@@ -170,11 +203,13 @@ MonoBehaviour:
     m_Bits: 0
   distance: 0
   groundRayObject: {fileID: 854690289846647543}
+  groundRayObject1: {fileID: 8771335292817495657}
+  groundRayObject2: {fileID: 4740353802328150116}
   bulletObject: {fileID: 0}
-  point: 0
-  coin: 0
   id: 2
   bomb: {fileID: 1005016364909040508, guid: 592dd22b9ee998048ab58c0f214f487c, type: 3}
+  isClimbingWall: 0
+  isTouchingWall: 0
 --- !u!70 &6376004120502706545
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -231,3 +266,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &8771335292817495657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 22955156686318736}
+  m_Layer: 0
+  m_Name: GroundRay (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &22955156686318736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8771335292817495657}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.14, y: 0.125, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4327083774345407532}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

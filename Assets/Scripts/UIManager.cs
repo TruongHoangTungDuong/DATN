@@ -89,6 +89,16 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
         isGameOver = true;
     }
+    public void Quit()
+    {
+        Time.timeScale = 1;
+        Application.Quit();
+    }
+    public void QuitToMainMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
+        Time.timeScale = 1;
+    }
     public void SetTimeCountdown(string txt)
     {
         timeCountdownText.text= txt;

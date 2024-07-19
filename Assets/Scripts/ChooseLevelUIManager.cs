@@ -14,6 +14,6 @@ public class ChooseLevelUIManager : MonoBehaviour
     }
     public void QuitToChooseCharacterScene()
     {
-        SceneManager.LoadSceneAsync(12);
+        SceneManager.LoadSceneAsync(2);
     }
 }

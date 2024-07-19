@@ -7,7 +7,7 @@ public class MainMenuUIManager : MonoBehaviour
 {
     public void SkipToChooseCharacterScene()
     {
-        SceneManager.LoadSceneAsync(12);
+        SceneManager.LoadSceneAsync(2);
 
     }
 }

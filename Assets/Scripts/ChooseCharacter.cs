@@ -11,7 +11,7 @@ public class ChooseCharacter : MonoBehaviour
     }
     public void SkipToChooseLevelScene()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(3);
     }
     public void QuitToMainMenu()
     {
